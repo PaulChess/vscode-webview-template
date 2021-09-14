@@ -1,0 +1,63 @@
+{
+	"name": "vscode-webview-template",
+	"displayName": "vscode-webview-template",
+	"description": "",
+	"version": "0.0.1",
+  "publisher": "shenjiaqi",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vscode-webview-template.helloWorld",
+    "onView:hxmui_sidebar_1"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-webview-template.helloWorld",
+				"title": "Hello World"
+			}
+		],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "hxmui-test",
+          "title": "侧边栏面板容器",
+          "icon": "resources/sidebar.svg"
+        }
+      ]
+    },
+    "views": {
+      "hxmui-test": [
+        {
+          "id": "hxmui_sidebar_1",
+          "name": "侧边栏1"
+        },
+        {
+          "id": "hxmui_sidebar_2",
+          "name": "侧边栏2"
+        }
+      ]
+    }
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.46.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
